@@ -1,0 +1,500 @@
+{
+  "type": "bundle",
+  "id": "bundle--10e70d44-7056-4a40-a0c2-110a522392c2",
+  "spec_version": "2.1",
+  "created": "2022-12-06T07:44:28.588Z",
+  "modified": "2022-12-06T07:44:28.588Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--28cdb0d9-e2fb-4429-858b-502895d9b9fd",
+      "spec_version": "2.1",
+      "created": "2022-12-02T08:40:36.338Z",
+      "modified": "2022-12-06T07:44:28.588Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--957fa448-9183-48ca-afef-436e393f1b8a",
+      "start_refs": [
+        "attack-action--e4ba7104-4a07-4278-bbb2-5de75614a2d1"
+      ],
+      "name": "GCP VM Instance attack",
+      "author": [
+        [
+          "name",
+          "Daniel Rodriguez"
+        ],
+        [
+          "identity_class",
+          "23b79ae0fc0f07a3669598dd23c694cc"
+        ],
+        [
+          "contact_information",
+          "@dvirus"
+        ]
+      ],
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--957fa448-9183-48ca-afef-436e393f1b8a",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.588Z",
+      "modified": "2022-12-06T07:44:28.588Z",
+      "name": "Daniel Rodriguez",
+      "identity_class": "individual",
+      "contact_information": "@dvirus"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e4ba7104-4a07-4278-bbb2-5de75614a2d1",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.589Z",
+      "modified": "2022-12-06T07:44:28.589Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploit Public-Facing Application",
+      "tactic_id": "TA0001",
+      "tactic_ref": "https://attack.mitre.org/tactics/TA0001/",
+      "technique_id": "T1190",
+      "technique_ref": "https://attack.mitre.org/techniques/T1190/",
+      "description": "If an application is hosted on cloud-based infrastructure, then exploiting it may lead to compromise of the underlying instance. This can allow an adversary a path to access the cloud or container APIs, exploit container host access via Escape to Host, or take advantage of weak identity and access management policies.",
+      "confidence": 50,
+      "effect_refs": [
+        "attack-action--34100cbd-170c-4891-afd5-094cccd4002c"
+      ],
+      "asset_refs": [
+        "attack-asset--6449666a-9b34-49bd-be44-f4996427de78",
+        "attack-asset--37dbf394-4428-49fb-baf7-c1d2250f6c62"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--34100cbd-170c-4891-afd5-094cccd4002c",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.589Z",
+      "modified": "2022-12-06T07:44:28.589Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Command and Scripting Interpreter: Unix Shell",
+      "tactic_id": "TA0002",
+      "tactic_ref": "https://attack.mitre.org/tactics/TA0002/",
+      "technique_id": "T1059.004",
+      "technique_ref": "https://attack.mitre.org/techniques/T1059/004/",
+      "description": "Adversaries may abuse Unix shell commands and scripts for execution. Unix shells are the primary command prompt on Linux ",
+      "confidence": 10,
+      "asset_refs": [
+        "attack-asset--7739802d-6627-449b-bc81-4c8d667b2b5d"
+      ],
+      "effect_refs": [
+        "attack-action--d6b093c6-d5b0-4d66-9b01-aac9b033a76b"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--281fba79-c5db-4cdf-8d61-bfc05a077531",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.589Z",
+      "modified": "2022-12-06T07:44:28.589Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "GCP VM Instance"
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--d448bf17-e159-4bfa-8199-c786b2c2bb24",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.589Z",
+      "modified": "2022-12-06T07:44:28.589Z",
+      "name": "Unknown"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--6449666a-9b34-49bd-be44-f4996427de78",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.589Z",
+      "modified": "2022-12-06T07:44:28.589Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Application Logs",
+      "description": "The nginx access logs are parsed for their connection details, which include fields mapped to request, client, server, and message.\n https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent/third-party/nginx#nginx-logs",
+      "object_ref": "attack-operator--e62d2c42-693a-47ec-b6b6-e0b94d8b0124"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--37dbf394-4428-49fb-baf7-c1d2250f6c62",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.590Z",
+      "modified": "2022-12-06T07:44:28.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "VPC Flow Logs",
+      "description": "Summarized network packet data, with metrics, such as protocol headers and volume"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--7739802d-6627-449b-bc81-4c8d667b2b5d",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.590Z",
+      "modified": "2022-12-06T07:44:28.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Sysmon Logs"
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--e62d2c42-693a-47ec-b6b6-e0b94d8b0124",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.590Z",
+      "modified": "2022-12-06T07:44:28.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--838958b0-ca3a-4dbd-9457-0e3d905d3c4a",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.590Z",
+      "modified": "2022-12-06T07:44:28.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Google-Cloud-Ops- Agent"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d6b093c6-d5b0-4d66-9b01-aac9b033a76b",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.590Z",
+      "modified": "2022-12-06T07:44:28.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Web Shell",
+      "tactic_id": "https://attack.mitre.org/tactics/TA0003/",
+      "tactic_ref": "Persistence \nhttps://attack.mitre.org/tactics/TA0003/",
+      "technique_id": "T1505.003",
+      "technique_ref": "https://attack.mitre.org/techniques/T1505/003/",
+      "description": "Adversaries may backdoor web servers with web shells to establish persistent access to systems. A Web shell is a Web script that is placed on an openly accessible Web server to allow an adversary to use the Web server as a gateway into a network.",
+      "confidence": 70,
+      "asset_refs": [
+        "attack-asset--12f11536-fb94-479c-84cf-30293d194a53"
+      ],
+      "effect_refs": [
+        "attack-action--3ba51d64-80d2-47da-a076-334518eb8c9d"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--12f11536-fb94-479c-84cf-30293d194a53",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.590Z",
+      "modified": "2022-12-06T07:44:28.590Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Application Logs",
+      "description": "The nginx access logs are parsed for their connection details, which include fields mapped to request, client, server, and message.\n https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent/third-party/nginx#nginx-logs"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3ba51d64-80d2-47da-a076-334518eb8c9d",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Lateral Movement",
+      "tactic_id": "TA0008",
+      "tactic_ref": "https://attack.mitre.org/tactics/TA0008/",
+      "description": "Lateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it.",
+      "confidence": 90,
+      "effect_refs": [
+        "attack-operator--c1f4ef6e-1928-44bd-8282-933b56bfb130",
+        "attack-action--03615df4-a506-41da-8972-c29969774922"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--9c015c49-4bcb-4c77-b6de-2d510d83c267",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "VPC Flow Logs",
+      "description": "Summarized network packet data, with metrics, such as protocol headers and volume"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--ec3ff6bd-0bad-4cd7-b118-90a6ff8f5377",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Firewall Logs",
+      "description": "VPC Firewall Logs"
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--c1f4ef6e-1928-44bd-8282-933b56bfb130",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--03615df4-a506-41da-8972-c29969774922",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Collection",
+      "tactic_id": "TA0009",
+      "tactic_ref": "https://attack.mitre.org/tactics/TA0009/",
+      "description": "Collection consists of techniques adversaries may use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives. Frequently, the next goal after collecting data is to steal (exfiltrate) the data.",
+      "confidence": 90,
+      "asset_refs": [
+        "attack-asset--1079d4c3-3033-4b54-8c2e-d201ce48118a",
+        "attack-asset--ced662ab-128f-4517-96c6-927b2bb34594"
+      ],
+      "effect_refs": [
+        "attack-action--088d7fe9-247f-4e61-a5ea-66f354208091"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--1079d4c3-3033-4b54-8c2e-d201ce48118a",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Forensic Image"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--ced662ab-128f-4517-96c6-927b2bb34594",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Sysmon Logs"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--088d7fe9-247f-4e61-a5ea-66f354208091",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exfiltration",
+      "tactic_id": "TA0010",
+      "tactic_ref": "https://attack.mitre.org/tactics/TA0010/",
+      "description": "Exfiltration consists of techniques that adversaries may use to steal data from your network. Once they’ve collected data, adversaries often package it to avoid detection while removing it. This can include compression and encryption.",
+      "confidence": 30,
+      "asset_refs": [
+        "attack-asset--31aa4ac0-4378-42c5-8ae2-41e258717a63",
+        "attack-asset--2c925ad1-596b-43f1-b4fc-59eb0b7fe4a3"
+      ],
+      "effect_refs": [
+        "attack-action--42e08db6-c194-4081-9cc5-f518e6f2637f"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--31aa4ac0-4378-42c5-8ae2-41e258717a63",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "VPC Flow Logs",
+      "description": "Summarized network packet data, with metrics, such as protocol headers and volume"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--2c925ad1-596b-43f1-b4fc-59eb0b7fe4a3",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Network Traffic Graphs"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--42e08db6-c194-4081-9cc5-f518e6f2637f",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Defacement",
+      "tactic_id": "TA0040",
+      "tactic_ref": "Impact https://attack.mitre.org/tactics/TA0040/",
+      "technique_id": "T1491",
+      "technique_ref": "https://attack.mitre.org/techniques/T1491/",
+      "description": "Adversaries may modify visual content available internally or externally to an enterprise network, thus affecting the integrity of the original content. Reasons for Defacement include delivering messaging, intimidation, or claiming (possibly false) credit for an intrusion. Disturbing or offensive images may be used as a part of Defacement in order to cause user discomfort, or to pressure compliance with accompanying messages.",
+      "confidence": 90
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b8810311-cb41-4601-a955-c3cf2cc46075",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "threat-actor--d448bf17-e159-4bfa-8199-c786b2c2bb24",
+      "target_ref": "attack-asset--281fba79-c5db-4cdf-8d61-bfc05a077531"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--946125d3-c272-43fd-a8a4-23c7178f8f33",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "threat-actor--d448bf17-e159-4bfa-8199-c786b2c2bb24",
+      "target_ref": "attack-action--e4ba7104-4a07-4278-bbb2-5de75614a2d1"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2dee5b9a-4a7c-4e0f-ac64-6287e33ccaad",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--e62d2c42-693a-47ec-b6b6-e0b94d8b0124",
+      "target_ref": "attack-asset--838958b0-ca3a-4dbd-9457-0e3d905d3c4a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--37da5d1b-dea0-4028-ac5b-15151aed444b",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--c1f4ef6e-1928-44bd-8282-933b56bfb130",
+      "target_ref": "attack-asset--9c015c49-4bcb-4c77-b6de-2d510d83c267"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a062d445-ec39-4dd7-b9be-2e7d48a1d467",
+      "spec_version": "2.1",
+      "created": "2022-12-06T07:44:28.591Z",
+      "modified": "2022-12-06T07:44:28.591Z",
+      "relationship_type": "related-to",
+      "source_ref": "attack-operator--c1f4ef6e-1928-44bd-8282-933b56bfb130",
+      "target_ref": "attack-asset--ec3ff6bd-0bad-4cd7-b118-90a6ff8f5377"
+    }
+  ]
+}
