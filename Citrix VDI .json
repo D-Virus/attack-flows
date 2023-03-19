@@ -1,0 +1,495 @@
+{
+  "type": "bundle",
+  "id": "bundle--9488143f-242a-44bd-8f60-5fe69cf07fe8",
+  "spec_version": "2.1",
+  "created": "2023-03-18T14:18:04.556Z",
+  "modified": "2023-03-18T14:18:04.556Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "create_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--13d87cbb-b483-466e-8ca7-0a0e84419c10",
+      "spec_version": "2.1",
+      "created": "2023-03-17T09:04:31.335Z",
+      "modified": "2023-03-18T14:18:04.556Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--68476989-4d75-4f18-bc62-799c35bd1cb9",
+      "start_refs": [
+        "attack-action--38967862-6842-49c1-8c50-d8cd0498da92",
+        "attack-action--ba262ba4-b5cc-4c9c-88e1-ffad76f82143",
+        "attack-action--24b1fc1c-5e33-478e-ab82-9cb81ba1b1df",
+        "attack-action--dedd0840-7796-4ecd-beab-898b168e50cc",
+        "attack-action--c5f8dc0f-2bf9-4c39-913f-8d4e8df5421a"
+      ],
+      "name": "Citrix VDI ",
+      "scope": "incident",
+      "external_references": []
+    },
+    {
+      "type": "identity",
+      "id": "identity--68476989-4d75-4f18-bc62-799c35bd1cb9",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.556Z",
+      "modified": "2023-03-18T14:18:04.556Z",
+      "name": "Daniel Rodriguez",
+      "contact_information": "@dvirus"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--38967862-6842-49c1-8c50-d8cd0498da92",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.556Z",
+      "modified": "2023-03-18T14:18:04.556Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Zero-day exploit in Citrix ADC/Gateway",
+      "tactic_id": "T1190",
+      "technique_id": "T1190",
+      "description": "A threat actor exploits a zero-day vulnerability in Citrix ADC or Citrix Gateway",
+      "confidence": 70,
+      "effect_refs": [
+        "attack-action--ecef1af1-85ac-4a63-abd1-10fc9bf7e8be"
+      ],
+      "asset_refs": [
+        "attack-asset--4188c9bc-39dd-485c-98fd-6408e78b8d4f"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ecef1af1-85ac-4a63-abd1-10fc9bf7e8be",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.556Z",
+      "modified": "2023-03-18T14:18:04.556Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Command and Scripting Interpreter",
+      "tactic_id": "TA0002",
+      "tactic_ref": "Execution",
+      "technique_id": "T1059",
+      "description": "VDI user can execute commands and scripts",
+      "confidence": 70,
+      "effect_refs": [
+        "attack-action--f1281a77-c96a-4c33-8940-fe846e11d7c0",
+        "attack-action--19c5b373-f050-4dd2-9ac4-f914c2c718d2"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--19c5b373-f050-4dd2-9ac4-f914c2c718d2",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.556Z",
+      "modified": "2023-03-18T14:18:04.556Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create Account",
+      "tactic_id": "TA0003",
+      "technique_id": "T1053",
+      "effect_refs": [
+        "attack-operator--67af9390-3896-4884-adcb-ed5c060ba5d6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f1281a77-c96a-4c33-8940-fe846e11d7c0",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Scheduled Task/Job",
+      "tactic_id": "TA0003",
+      "technique_id": "T1136",
+      "effect_refs": [
+        "attack-operator--67af9390-3896-4884-adcb-ed5c060ba5d6"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4188c9bc-39dd-485c-98fd-6408e78b8d4f",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "CEVT VDI Portal",
+      "description": "vulnerable, public-facing server"
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--67af9390-3896-4884-adcb-ed5c060ba5d6",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--ba262ba4-b5cc-4c9c-88e1-ffad76f82143"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ba262ba4-b5cc-4c9c-88e1-ffad76f82143",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploitation for Privilege Escalation",
+      "tactic_id": "TA0004",
+      "technique_id": "T1068",
+      "description": "Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code.",
+      "confidence": 70,
+      "effect_refs": [
+        "attack-action--7f3d4c48-d60d-4e6a-813d-935590a363e7"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7f3d4c48-d60d-4e6a-813d-935590a363e7",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Obfuscated Files or Information",
+      "tactic_id": "TA0005",
+      "technique_id": "T1027",
+      "description": "Payloads may be compressed, archived, or encrypted in order to avoid detection.",
+      "confidence": 90,
+      "effect_refs": [
+        "attack-action--ff44c511-d4fd-441e-8c3c-b61040d8d92b"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ff44c511-d4fd-441e-8c3c-b61040d8d92b",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Credential Dumping",
+      "tactic_id": "TA0006",
+      "technique_id": "T1003",
+      "description": "Adversaries may attempt to dump credentials to obtain account login and credential material, normally in the form of a hash or a clear text password, from the operating system and software.",
+      "confidence": 70,
+      "effect_refs": [
+        "attack-action--4417e94d-d828-4c37-9e36-423d420c63bd",
+        "attack-action--4d104757-22ff-44cd-9459-706cec0a66a3"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4417e94d-d828-4c37-9e36-423d420c63bd",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote System Discovery",
+      "tactic_id": "TA0007",
+      "technique_id": "T1018",
+      "description": "Adversaries may attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system.",
+      "confidence": 100,
+      "effect_refs": [
+        "attack-operator--d5cd94cd-beab-465c-8ad8-eba3622e8977"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4d104757-22ff-44cd-9459-706cec0a66a3",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Information Discovery",
+      "tactic_id": "TA0007",
+      "technique_id": "T1082",
+      "description": "An adversary may attempt to get detailed information about the operating system and hardware, including version, patches, hotfixes, service packs, and architecture.",
+      "confidence": 100,
+      "effect_refs": [
+        "attack-operator--d5cd94cd-beab-465c-8ad8-eba3622e8977"
+      ]
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--64ceab66-a7a9-4555-9d48-726b9859a3d7",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "name": "External Threat Actor"
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--a5a6ed82-bcac-4066-9eef-478c0161b615",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "name": "Co-worker, Consultant, Partner"
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--d5cd94cd-beab-465c-8ad8-eba3622e8977",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--24b1fc1c-5e33-478e-ab82-9cb81ba1b1df"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--24b1fc1c-5e33-478e-ab82-9cb81ba1b1df",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote Services",
+      "tactic_id": "TA0008",
+      "tactic_ref": "Lateral Movement",
+      "technique_id": "T1021",
+      "description": "Adversaries may use Valid Accounts to log into a service specifically designed to accept remote connections",
+      "confidence": 90,
+      "effect_refs": [
+        "attack-action--3ba0478d-afee-4961-9472-72e72cc0b07b"
+      ],
+      "asset_refs": [
+        "attack-asset--4dfca00e-a5b6-4e68-8274-81e23a5b1134",
+        "attack-asset--37ad0087-d8bd-4d3b-8eba-bb94b1e241ec"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3ba0478d-afee-4961-9472-72e72cc0b07b",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data Staged",
+      "tactic_id": "TA0009",
+      "tactic_ref": "Collection",
+      "technique_id": "T1074",
+      "description": "Adversaries may stage collected data in a central location or directory prior to Exfiltration",
+      "confidence": 100,
+      "effect_refs": [
+        "attack-action--413dcec8-73de-4caf-80c2-e628a6c4beaa"
+      ]
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--4dfca00e-a5b6-4e68-8274-81e23a5b1134",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Backup Servers"
+    },
+    {
+      "type": "attack-asset",
+      "id": "attack-asset--37ad0087-d8bd-4d3b-8eba-bb94b1e241ec",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "File Servers"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--413dcec8-73de-4caf-80c2-e628a6c4beaa",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Non-Standard Port",
+      "tactic_id": "TA0011",
+      "tactic_ref": "Command And Control",
+      "technique_id": "T1571",
+      "description": "Adversaries may communicate using a protocol and port paring that are typically not associated. For example, HTTPS over port 8088 or port 587 as opposed to the traditional port 443",
+      "effect_refs": [
+        "attack-action--3dae6cc0-aff9-4a05-9be9-d732a7b62899"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3dae6cc0-aff9-4a05-9be9-d732a7b62899",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exfiltration Over Command and Control Channel",
+      "tactic_id": "TA0010",
+      "technique_id": "T1041",
+      "description": "Adversaries may steal data by exfiltrating it over an existing command and control channel. Stolen data is encoded into the normal communications channel using the same protocol as command and control communications.",
+      "effect_refs": [
+        "attack-operator--a21e149e-35a6-4af3-858a-42eaed1ed098"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--dedd0840-7796-4ecd-beab-898b168e50cc",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data Encrypted for Impact",
+      "tactic_id": "TA0040",
+      "tactic_ref": "Impact",
+      "technique_id": "T1486",
+      "description": "Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources.",
+      "confidence": 100
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--a21e149e-35a6-4af3-858a-42eaed1ed098",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "AND",
+      "effect_refs": [
+        "attack-action--dedd0840-7796-4ecd-beab-898b168e50cc",
+        "attack-action--c5f8dc0f-2bf9-4c39-913f-8d4e8df5421a"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--c5f8dc0f-2bf9-4c39-913f-8d4e8df5421a",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.557Z",
+      "modified": "2023-03-18T14:18:04.557Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Inhibit System Recovery",
+      "tactic_id": "TA0040",
+      "technique_id": "T1490",
+      "description": "Adversaries may delete or remove built-in operating system data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery.\nThis may deny access to available backups and recovery options.",
+      "confidence": 100
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--9ae01b72-6546-4607-af70-7cc3b2df7647",
+      "spec_version": "2.1",
+      "created": "2023-03-18T14:18:04.558Z",
+      "modified": "2023-03-18T14:18:04.558Z",
+      "relationship_type": "related-to",
+      "source_ref": "threat-actor--a5a6ed82-bcac-4066-9eef-478c0161b615",
+      "target_ref": "attack-action--4417e94d-d828-4c37-9e36-423d420c63bd"
+    }
+  ]
+}
